@@ -82,24 +82,7 @@ function App() {
         }}
       />
 
-      {work && <Figure data={work} />}
-
-      <div className="d-flex gap-2 mt-3">
-        <button
-          type="button"
-          className="btn btn-secondary"
-          onClick={handlePrev}
-        >
-          이전
-        </button>
-        <button
-          type="button"
-          className="btn btn-secondary"
-          onClick={handleNext}
-        >
-          다음
-        </button>
-      </div>
+      {work && <Figure data={work} onPrev={handlePrev} onNext={handleNext} />}
     </>
   );
 }
