@@ -4,10 +4,37 @@ import Nav from "./components/Nav";
 import Figure from "./components/Figure";
 
 function App() {
+  const works = [
+    {
+      id: 1,
+      title: "work 1",
+      url: "images/img-1.jpg",
+      desc: "Work 1 description",
+    },
+    {
+      id: 2,
+      title: "work 2",
+      url: "images/img-2.jpg",
+      desc: "Work 2 description",
+    },
+    {
+      id: 3,
+      title: "work 3",
+      url: "images/img-3.jpg",
+      desc: "Work 3 description",
+    },
+    {
+      id: 4,
+      title: "work 4",
+      url: "images/img-4.jpg",
+      desc: "Work 4 description",
+    },
+  ];
+
   return (
     <>
       <Header />
-      <Nav />
+      <Nav data={works} />
       <Figure />
     </>
   );

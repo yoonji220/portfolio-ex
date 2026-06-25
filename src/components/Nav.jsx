@@ -1,21 +1,14 @@
-function Nav() {
+function Nav({ data }) {
+  const lists = data.map(work => (
+    <li key={work.id}>
+      <a href="">{work.title}</a>
+    </li>
+  ));
+
   return (
-     <nav>
-        <ul>
-          <li>
-            <a href="">work 1</a>
-          </li>
-          <li>
-            <a href="">work 2</a>
-          </li>
-          <li>
-            <a href="">work 3</a>
-          </li>
-          <li>
-            <a href="">work 4</a>
-          </li>
-        </ul>
-      </nav>
+    <nav>
+      <ul>{lists}</ul>
+    </nav>
   );
 }
 
