@@ -1,21 +1,23 @@
-function Nav({ data, onChangeMode }) {
+function Nav({ data, id, onChangeMode }) {
   const lists = data.map(work => (
     <li key={work.id}>
-      <a
-        href=""
-        onClick={e => {
-          e.preventDefault();
+      <button
+        type="button"
+        className={`btn ${
+          work.id === id ? "btn-primary" : "btn-outline-primary"
+        }`}
+        onClick={() => {
           onChangeMode(work.id);
         }}
       >
         {work.title}
-      </a>
+      </button>
     </li>
   ));
 
   return (
     <nav>
-      <ul>{lists}</ul>
+      <ul className="d-flex flex-column gap-2">{lists}</ul>
     </nav>
   );
 }

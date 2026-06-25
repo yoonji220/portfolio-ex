@@ -1,8 +1,12 @@
 function Figure({ data }) {
+  if (!data) return null;
+
+  const { url, desc, title } = data;
+
   return (
     <figure>
-      <img alt="img-1" src={data.url} />
-      <figcaption>{data.desc}</figcaption>
+      <img alt={title} src={url} />
+      <figcaption>{desc}</figcaption>
     </figure>
   );
 }

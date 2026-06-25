@@ -1,7 +1,9 @@
-function Header() {
+function Header({ onChangeMode }) {
   return (
     <header>
-      <h1>My works</h1>
+      <h1 className="mb-4" onClick={onChangeMode}>
+        My works
+      </h1>
     </header>
   );
 }
