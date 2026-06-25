@@ -2,6 +2,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Figure from "./components/Figure";
+import { useState } from "react";
 
 function App() {
   const works = [
@@ -31,11 +32,20 @@ function App() {
     },
   ];
 
+  const [id, setId] = useState(1);
+  const work = works.find(w => w.id === id);
+
   return (
     <>
       <Header />
-      <Nav data={works} />
-      <Figure />
+      <Nav
+        data={works}
+        onChangeMode={id => {
+          setId(id);
+        }}
+      />
+
+      <Figure data={work} />
     </>
   );
 }
